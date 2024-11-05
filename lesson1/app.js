@@ -5,10 +5,10 @@ let url = 'https://dummyjson.com/users'
 async function getProducts() {
 	try {
 		const res = await fetch(url)
-		const data = await res.json()
+		const user = await res.json()
 
-		console.log(data)
-		showUser(data.users)
+		console.log(user)
+		showUser(user.users)
 	} catch (error) {
 		console.log(error)
 	}
@@ -21,11 +21,13 @@ function showUser(data) {
 		.map(item => {
 			return `
 			 <div>
-			 <img src="${item.image}"/>
+			 <img src="${item.image}" alt=""/>
 			  <p style="color:red;">${item.address.city} </p>
+			  <p style="color:maroon; padding: 10px 10px">${item.ip} </p>
 			  <p style="color:yellow">${item.firstName}</p>
-			  <p style="color:blue">${item.phone}</p>
+			  <p style="color:blue; padding: 10px 10px ">${item.phone}</p>
 			  <p style="color:green">${item.bank.cardNumber}</p>
+			  <p style="color:green">${item.bloodGroup}</p>
 			 </div>
 			`
 		})
@@ -57,9 +59,10 @@ function giveMe(data) {
 			return `
 			 <div>
 			 <img src="${item.thumbnail}" alt="" width="200px"/>
-			  <p style="color:red;">${item.brand} </p>
-			  <p style="color:blue;">${item.price} </p>
+			  <p style="color:rebeccapurple;">${item.brand} </p>
+			  <p style="color:blue; padding: 10px 10px">${item.price} </p>
 			  <p style="color:gray;">${item.rating} </p>
+			  <p style="color:greenyellow;">${item.returnPolicy} </p>
 			 </div>
 			`
 		})
