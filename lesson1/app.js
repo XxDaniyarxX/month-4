@@ -20,8 +20,9 @@ function showUser(data) {
 	container.innerHTML += data
 		.map(item => {
 			return `
-			 <div>
-			 <img src="${item.image}" alt=""/>
+			
+			<div style="width: 150px; height: 300px; border: 1px solid gold">
+			     <img src="${item.image}" alt=""/>
 			  <p style="color:red;">${item.address.city} </p>
 			  <p style="color:maroon; padding: 10px 10px">${item.ip} </p>
 			  <p style="color:yellow">${item.firstName}</p>
@@ -57,7 +58,7 @@ function giveMe(data) {
     container2.innerHTML += data
 		.map(item => {
 			return `
-			 <div>
+			 <div style="width: 300px; height: 330px; border: 1px solid fuchsia">
 			 <img src="${item.thumbnail}" alt="" width="200px"/>
 			  <p style="color:rebeccapurple;">${item.brand} </p>
 			  <p style="color:blue; padding: 10px 10px">${item.price} </p>
